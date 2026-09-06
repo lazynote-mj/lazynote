@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lazynote 제목과 목차"
+  short_description: "글의 약속과 사고 흐름에 맞는 제목·목차를 만듭니다"
+  default_prompt: "이 글의 중심 질문과 필자 페르소나를 살려 제목과 목차를 설계해 주세요."
