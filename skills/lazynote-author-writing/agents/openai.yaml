@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lazynote 기본 저자 집필"
+  short_description: "등록된 기본 저자의 관점과 목소리로 에세이를 씁니다"
+  default_prompt: "기본 저자의 경험과 관점을 보존해 이 소재를 한 편의 에세이로 발전시켜 주세요."
