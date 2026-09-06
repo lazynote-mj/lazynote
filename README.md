@@ -16,18 +16,28 @@
 
 ## 설치
 
+이 저장소는 비공개(private)다. 설치하려는 사람을 먼저 GitHub 저장소의 collaborator로 추가해야 한다 ([Settings → Collaborators](https://github.com/lazynote-mj/lazynote/settings/access)).
+
 터미널에서:
 
 ```bash
-claude plugin marketplace add /path/to/lazynote
+claude plugin marketplace add https://github.com/lazynote-mj/lazynote
 claude plugin install lazynote@lazynote
 ```
 
 또는 Claude Code 세션 안에서:
 
 ```
-/plugin marketplace add /path/to/lazynote
+/plugin marketplace add https://github.com/lazynote-mj/lazynote
 /plugin install lazynote@lazynote
 ```
+
+로컬 경로로 직접 쓰는 경우(저장소를 clone해 둔 경우)는 그 경로를 대신 넣는다:
+
+```bash
+claude plugin marketplace add /path/to/lazynote
+```
+
+설치 직후엔 이미 켜져 있던 세션에서 스킬이 안 보일 수 있다 — `/reload-plugins`로 반영하거나 새 세션을 연다.
 
 설치되면 각 스킬은 `/lazynote:lazynote-case-writing`처럼 호출하거나, 스킬 설명에 맞는 요청(예: "사례 찾아줘", "제목 좀 다듬어줘", "이 에세이 퇴고해줘")으로 자동 트리거된다.
