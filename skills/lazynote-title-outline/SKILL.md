@@ -5,6 +5,8 @@ description: 한국어 아티클·에세이·연재·책의 제목, 부제, 소�
 
 # Lazynote Title and Outline
 
+이미 있는 원고의 교정·윤문만 요청받았다면 [lazynote-korean-editing](../lazynote-korean-editing/SKILL.md)으로 진행하며, 시리즈 기획 인터뷰를 선행하지 않는다.
+
 제목과 목차를 내용의 포장이나 분류표가 아니라 **글의 약속과 사고의 경로**로 설계한다.
 
 ## 필요한 재료 파악
@@ -56,6 +58,8 @@ description: 한국어 아티클·에세이·연재·책의 제목, 부제, 소�
 상세 기준은 [references/review-checklist.md](references/review-checklist.md)를 사용한다.
 
 ## 진단과 수정
+
+한국어 표기·호응·번역투·문맥을 다듬을 때는 [lazynote-korean-editing](../lazynote-korean-editing/SKILL.md)의 공통 기준을 읽고 적용한다. 필자의 목소리와 이 스킬의 장르별 기준을 유지한다. 제목·목차 작업은 해당 문구 범위에만 적용한다.
 
 기존 제목·목차를 검토할 때는 전면 대체부터 하지 않는다. 현재 안이 약속하는 내용, 실제 원고와 맞는 부분, 겹침·공백·순서 문제·과장된 약속, 유지할 표현을 짚고 최소 수정안을 먼저 낸다. 필요할 때만 재구성안을 추가한다.
 

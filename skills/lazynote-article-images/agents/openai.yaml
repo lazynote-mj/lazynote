@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lazynote 아티클 이미지"
+  short_description: "글의 논지에 맞는 도표와 표지 이미지를 제작하고 검수합니다"
+  default_prompt: "$lazynote-article-images로 이 아티클의 논지와 삽입 위치에 맞는 이미지를 만들어 주세요."

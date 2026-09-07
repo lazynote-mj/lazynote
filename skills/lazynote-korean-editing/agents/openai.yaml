@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lazynote 한국어 교정·윤문"
+  short_description: "의미와 필자의 말투를 지키며 한국어 표기와 문장을 다듬습니다"
+  default_prompt: "$lazynote-korean-editing으로 이 글의 맞춤법·띄어쓰기·호응을 확인하고 자연스럽게 윤문해 주세요."
