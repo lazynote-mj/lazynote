@@ -1,0 +1,83 @@
+name: Publish release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .claude-plugin/plugin.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read and verify version
+        id: version
+        shell: bash
+        run: |
+          plugin_version="$(jq -r '.version' .claude-plugin/plugin.json)"
+          marketplace_version="$(jq -r '.plugins[] | select(.name == "lazynote") | .version' .claude-plugin/marketplace.json)"
+
+          if [[ -z "$plugin_version" || "$plugin_version" == "null" ]]; then
+            echo "plugin.json에 version이 없습니다."
+            exit 1
+          fi
+
+          if [[ "$plugin_version" != "$marketplace_version" ]]; then
+            echo "버전이 일치하지 않습니다: plugin.json=$plugin_version, marketplace.json=$marketplace_version"
+            exit 1
+          fi
+
+          if [[ ! "$plugin_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$ ]]; then
+            echo "지원하지 않는 버전 형식입니다: $plugin_version"
+            exit 1
+          fi
+
+          echo "version=$plugin_version" >> "$GITHUB_OUTPUT"
+          echo "tag=v$plugin_version" >> "$GITHUB_OUTPUT"
+
+      - name: Check whether release already exists
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        shell: bash
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub release
+        if: steps.existing.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+          RELEASE_VERSION: ${{ steps.version.outputs.version }}
+        shell: bash
+        run: |
+          gh release create "$RELEASE_TAG" \
+            --target "$GITHUB_SHA" \
+            --title "lazynote $RELEASE_VERSION" \
+            --generate-notes
+
+      - name: Report existing release
+        if: steps.existing.outputs.exists == 'true'
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: echo "$RELEASE_TAG 릴리스가 이미 있어 새로 만들지 않았습니다."

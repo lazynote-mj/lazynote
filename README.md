@@ -46,6 +46,18 @@ claude plugin marketplace add /path/to/lazynote
 
 설치되면 각 스킬은 `/lazynote:lazynote-case-writing`처럼 호출하거나, 스킬 설명에 맞는 요청(예: "사례 찾아줘", "제목 좀 다듬어줘", "이 에세이 퇴고해줘", "맞춤법만 고쳐줘", "이 글에 맞는 이미지 만들어줘")으로 자동 트리거된다.
 
+### 업데이트
+
+서드파티 마켓플레이스는 자동 업데이트가 기본으로 꺼져 있다. `/plugin`의 `Marketplaces`에서 `lazynote`의 자동 업데이트를 켜면 새 버전이 배포될 때 자동으로 내려받는다. 수동으로 갱신하려면 다음 명령을 실행한다.
+
+```text
+/plugin marketplace update lazynote
+/plugin update lazynote@lazynote
+/reload-plugins
+```
+
+관리자는 `.claude-plugin/plugin.json`과 `.claude-plugin/marketplace.json`의 버전을 함께 올려 `main`에 반영한다. 버전 변경을 감지하면 GitHub Actions가 같은 버전의 태그와 릴리스 노트를 자동으로 만든다.
+
 ## 이미지 제작
 
 `lazynote-article-images`는 원고와 삽입 위치를 읽고 도표·차트와 표지·썸네일의 제작 경로를 고른다. 도표는 직접 제작한 원본과 업로드용 이미지를 관리하고, AI 일러스트는 현재 환경에 연결된 이미지 생성 도구를 사용한다. 플러그인 자체에 이미지 생성 서비스나 API 키는 포함되지 않는다. 생성 도구가 없으면 프롬프트와 제작 사양을 제공한다.
