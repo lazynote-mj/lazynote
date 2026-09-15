@@ -18,7 +18,7 @@
 
 ## 설치
 
-이 저장소는 비공개(private)다. 설치하려는 사람을 먼저 GitHub 저장소의 collaborator로 추가해야 한다 ([Settings → Collaborators](https://github.com/lazynote-mj/lazynote/settings/access)).
+이 저장소는 공개(public)다. 누구나 링크만으로 설치할 수 있다.
 
 터미널에서:
 
