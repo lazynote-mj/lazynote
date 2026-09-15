@@ -1,6 +1,6 @@
 # 기준의 근거와 적용 범위
 
-이 문서는 「좋아하는 것들의 경제」 원고 저장소의 `docs/visual-editorial-guide.md`, `docs/brunchbook-plan.md`, 01~06번 아티클의 SVG 도표, Lazynote의 `lazynote-case-writing/references/format.md`를 2026-09-07에 확인해 정리했다. 이식 가능한 요약이며 원래 저장소의 절대 경로나 별도 도구에 의존하지 않는다. 작업 프로젝트에 최신 지침이 있으면 그것을 따른다.
+이 문서는 이전에 작업한 한 연재의 시각 편집 지침 문서, 이미 발행된 여러 편의 SVG 도표, Lazynote의 `lazynote-case-writing/references/format.md`를 2026-09-07에 확인해 정리했다. 이식 가능한 요약이며 원래 저장소의 절대 경로나 별도 도구에 의존하지 않는다. 작업 프로젝트에 최신 지침이 있으면 그것을 따른다.
 
 ## 문서에서 확인한 판단
 
