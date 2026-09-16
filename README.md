@@ -65,3 +65,17 @@ claude plugin marketplace add /path/to/lazynote
 ## 한국어 교정·윤문
 
 `lazynote-korean-editing`은 장르에 공통으로 쓰는 교정·윤문 기준이다. 기존 글쓰기 스킬에서 이 기준을 참조하고, `lazynote-case-writing/references/voice.md`는 분석 아티클의 문체 기준을 추가한다. 맞춤법만 요청하면 표현과 구조는 유지하며, 윤문에서도 사실·조건·유보의 강도와 필자의 말투를 보존한다. 외부 맞춤법 검사기 없이도 사용할 수 있다.
+
+## 유지보수
+
+일부 스킬은 `agents/openai.yaml`로 Codex 호환 인터페이스를 함께 제공한다. 이 파일은 `SKILL.md`에서 자동 생성되지 않고 손으로 맞춰 쓴 것이라, `SKILL.md`를 고친 뒤 방치하면 조용히 어긋날 수 있다. `SKILL.md`를 고친 뒤에는 다음을 실행해 어떤 스킬의 `openai.yaml`을 다시 봐야 하는지 확인한다.
+
+```bash
+python3 scripts/check-openai-yaml-freshness.py
+```
+
+`openai.yaml`이 여전히 정확하면(또는 확인 후 고쳤으면) `--update`로 기준 해시를 갱신한다.
+
+```bash
+python3 scripts/check-openai-yaml-freshness.py --update
+```
