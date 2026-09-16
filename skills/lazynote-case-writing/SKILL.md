@@ -13,7 +13,7 @@ description: 공시·IR·공식 뉴스룸 같은 1차 출처로 검증한 기업
 
 ## 한국어 교정·윤문 공통 기준
 
-표기·띄어쓰기·호응·번역투 등 한국어 교정과 윤문에는 [lazynote-korean-editing](../lazynote-korean-editing/SKILL.md)을 읽고 적용한다. `references/voice.md`는 분석 아티클의 문체와 리듬을 추가로 정한다. 단순 교정·문장 윤문만 요청받으면 공통 스킬로 처리하고, 조사나 시리즈 기획 인터뷰까지 확대하지 않는다.
+표기·띄어쓰기·호응·번역투 등 한국어 기준에는 [lazynote-korean-editing](../lazynote-korean-editing/SKILL.md)을 읽고 적용한다. **이 기준은 윤문할 때만이 아니라 초고를 쓸 때부터 적용한다.** `references/voice.md`는 분석 아티클의 문체와 리듬을 추가로 정한다. 단순 교정·문장 윤문만 요청받으면 공통 스킬로 처리하고, 조사나 시리즈 기획 인터뷰까지 확대하지 않는다.
 
 ## 시작 전에 — 프로젝트의 결을 먼저 읽는다
 
