@@ -68,6 +68,8 @@ claude plugin marketplace add /path/to/lazynote
 
 ## 유지보수
 
+Claude와 Codex가 공동으로 업데이트한다. 수정 전 최신 변경과 작업 범위를 검토하고 작업 후 진행 상태를 갱신한다. 절차는 [공동 유지보수 지침](AGENTS.md), 현재 반영 내역과 남은 일은 [공동 작업 상태](handoff.md)를 따른다.
+
 일부 스킬은 `agents/openai.yaml`로 Codex 호환 인터페이스를 함께 제공한다. 이 파일은 `SKILL.md`에서 자동 생성되지 않고 손으로 맞춰 쓴 것이라, `SKILL.md`를 고친 뒤 방치하면 조용히 어긋날 수 있다. `SKILL.md`를 고친 뒤에는 다음을 실행해 어떤 스킬의 `openai.yaml`을 다시 봐야 하는지 확인한다.
 
 ```bash
