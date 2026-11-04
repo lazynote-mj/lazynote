@@ -20,6 +20,8 @@
 ## 1.3.3 배포 실행 — 2026-11-04
 
 - 담당 Codex. 기준 로컬 `127c6ec`, 원격 main `92f514a`로 앞섬 7/뒤처짐 0을 fetch 후 확인했다. 공개/개인 기준 분리와 기존 공동 작업을 대조했다. 미추적 `branding/`은 제외한다.
-- `codex/lazynote-1.3.3`에서 기존 변경과 두 버전 파일을 PR로 통합하고, main 병합이 실행하는 `Publish release`의 성공과 `v1.3.3` 태그·릴리스를 확인한다. 검증·실행 결과는 완료 후 갱신한다.
+- `codex/lazynote-1.3.3`의 기존 7커밋과 버전 커밋 `9cfe43c`를 [PR #1](https://github.com/lazynote-mj/lazynote/pull/1)에서 검토하고 merge 방식으로 main에 통합했다. 병합 커밋 `b04a77d149303ae643a8280011e0a1554764652b`와 기존 커밋 이력을 보존했다. 로컬 main도 fast-forward로 동기화했다.
 - 배포 전 점검: 두 JSON 버전 1.3.3 일치, 집필 스킬 6개 quick_validate 통과, openai.yaml 5개 freshness 일치, 전체 diffcheck 통과. 기존 라우터 ask-lazynote의 `disable-model-invocation`은 Codex 검증기의 허용 필드 밖이지만 Claude 공식 지원 필드이며 원격 원본에도 있던 설정이라 보존했다(https://code.claude.com/docs/en/skills#frontmatter-reference).
 - `claude plugin validate` 기본 검증 통과(경고 있음). 루트 CLAUDE.md는 저장소 공동 유지보수용이며 플러그인 실행 컨텍스트가 아니다. 디렉터리 카탈로그 제출용 LICENSE/icon 지적은 이번 GitHub 릴리스와 별도이며 라이선스를 임의 지정하지 않았다. 로컬 .DS_Store는 Git 추적 파일이 아님을 확인했다.
+- [Publish release 실행 41849768073](https://github.com/lazynote-mj/lazynote/actions/runs/41849768073) completed/success. [정식 v1.3.3 릴리스](https://github.com/lazynote-mj/lazynote/releases/tag/v1.3.3)는 2026-11-04 23:39 KST에 발행됐다. draft/prerelease false, 태그와 targetCommitish 모두 병합 커밋 b04a77d 일치 확인. 병합된 main에서 두 버전·freshness 5개·diffcheck와 원격 일치를 재확인했다.
+- GitHub 연결 도구의 쓰기 권한 403은 기존 로그인 GitHub CLI로 처리했다. 개인 기준·미추적 branding/·설치 캐시 변경 없음. 이번 커밋은 배포 완료 기록만 갱신하며 릴리스 태그의 코드·버전을 바꾸지 않는다.
